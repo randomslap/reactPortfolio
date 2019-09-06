@@ -180,8 +180,9 @@ class About extends Component {
 				licenseKey={null} //will buy license when complete
 				navigation
 				navigationTooltips={anchors}
+				showActiveTooltip={true}
 				scrollOverflow={true}
-				sectionsColor={["white", "white"]}
+				sectionsColor={["#4D4D4D", "#4D4D4D"]}
 				afterLoad={this.afterLoad.bind(this)}
 				render={({ state, fullpageApi }) => {
 					return (
@@ -236,6 +237,21 @@ class About extends Component {
 													currently proficient in
 													JavaScript, however, I am
 													familiar with C++ and Java.
+													As a full-stack web
+													developer, I am capable of
+													creating MERN stack
+													applications. In fact, this
+													portfolio is using MongoDB,
+													Express.js, React.js, and
+													Node.js. As a front-end
+													developer, I like to keep
+													the UI/UX dynamic. As a
+													back-end developer, I prefer
+													to use MongoDB as a database
+													and Node.js as a run-time
+													enviroment. If you have any
+													questions, feel free to
+													contact me!
 												</Typography>
 											</Paper>
 										</Grid>
@@ -248,15 +264,17 @@ class About extends Component {
 										justify="center"
 										alignItems="center"
 									>
-										<Grid item md={12}>
-											<Typography
-												id="skills"
-												variant="h4"
-												align="center"
-											>
-												My Skills
-											</Typography>
-										</Grid>
+										<Box mb={7}>
+											<Grid item md={12}>
+												<Typography
+													id="skills"
+													variant="h4"
+													align="center"
+												>
+													My Skills
+												</Typography>
+											</Grid>
+										</Box>
 									</Grid>
 
 									<Grid

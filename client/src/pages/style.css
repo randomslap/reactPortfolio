@@ -1,5 +1,7 @@
 body {
 	margin: 0px !important;
+	background-color: #4d4d4d;
+	color: white !important;
 }
 
 h1,
@@ -18,8 +20,31 @@ canvas {
 .MuiBottomNavigationAction-root.Mui-selected {
 	color: black !important;
 }
+
+.MuiPaper-root {
+	color: white !important;
+}
+
+.MuiDivider-root {
+	background-color: white !important;
+}
+
+.MuiBottomNavigationAction-label {
+	color: white !important;
+	font-family: "Manjari", sans-serif !important;
+}
+
+.MuiBottomNavigation-root {
+	background-color: #4d4d4d !important;
+	color: white !important;
+}
+
+.MuiTypography-root {
+	font-family: "Manjari", sans-serif !important;
+}
+
 .MuiContainer-root {
-	background-color: transparent;
+	background-color: #4d4d4d;
 }
 .MuiContainer-root#intro {
 	margin-top: 350px;
@@ -32,19 +57,29 @@ canvas {
 }
 
 .MuiAppBar-colorDefault {
-	background-color: white !important;
+	background-color: #4d4d4d !important;
 	box-shadow: none !important;
 	width: 500 !important;
 }
 
 .MuiPaper-rounded {
 	padding: 1em;
+	background-color: #4d4d4d !important;
 }
 
-/* .MuiListItem-gutters {
-	justify-content: center !important;
-	padding-right: 70px !important;
-} */
+.MuiButton-root {
+	color: white !important;
+	border-color: white !important;
+}
+.MuiButton-label {
+	font-family: "Manjari", sans-serif !important;
+}
+.MuiButton-outlined {
+	border-radius: 0px !important;
+}
+.MuiTouchRipple-root {
+	color: #00a7e8 !important;
+}
 
 .MuiListItemText-root {
 	max-width: fit-content !important;
@@ -74,7 +109,7 @@ canvas {
 	left: 0;
 	height: 100%;
 	width: 3px;
-	background-color: black;
+	background-color: #00a7e8;
 	transform-origin: 0 50%;
 }
 
@@ -86,6 +121,7 @@ canvas {
 .ml11 .letter {
 	display: inline-block;
 	line-height: 1em;
+	font-family: "Manjari", sans-serif;
 }
 
 .ml12 {
@@ -97,6 +133,7 @@ canvas {
 .ml12 .letter {
 	display: inline-block;
 	line-height: 1em;
+	font-family: "Manjari", sans-serif;
 }
 
 .ml13 {
@@ -109,49 +146,18 @@ canvas {
 	font-size: 1.2em;
 	font-weight: 200;
 	color: black;
-	background-color: white;
+	background-color: #4d4d4d;
 	text-align: center;
 	transition: all 0.2s;
 }
 
 .ml13:hover {
-	color: white;
+	color: #4d4d4d;
 	background-color: black;
 }
 
 #introBtn {
 	text-transform: none !important;
-}
-
-.slider {
-	height: 100%;
-	outline: none !important;
-	border: none !important;
-}
-
-.slider-slide div:focus {
-	outline: none !important;
-	border: none !important;
-}
-
-.slider-frame {
-	height: 100rem;
-}
-
-.aws-sld__content {
-	background-color: white;
-}
-
-.slider-control-bottomcenter {
-	display: none;
-}
-
-.slider-control-centerleft {
-	display: none !important;
-}
-
-.slider-control-centerright {
-	display: none !important;
 }
 
 .MuiContainer-root {
@@ -160,13 +166,32 @@ canvas {
 
 #fullpage {
 	z-index: 0 !important;
+	background-color: #4d4d4d;
 }
 
 .list {
 	height: 100% !important;
 	min-height: 35em !important;
 }
-
+.active {
+	border-radius: 0px !important;
+}
 .fp-tooltip {
-	color: black !important;
+	color: white !important;
+	font-family: "Manjari", sans-serif !important;
+	top: 1px !important;
+}
+
+.fp-sr-only {
+	background-color: #00a7e8 !important;
+	font-family: "Manjari", sans-serif !important;
+}
+
+a span {
+	background-color: #00a7e8 !important;
+	border-radius: 0px !important;
+}
+
+svg {
+	color: #00a7e8 !important;
 }

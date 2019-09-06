@@ -39,7 +39,7 @@ class Intro extends Component {
 			})
 			.add({
 				targets: ".ml11 .line",
-				translateX: [0, 480],
+				translateX: [0, 510],
 				easing: "easeOutExpo",
 				duration: 650,
 				delay: -300
@@ -141,7 +141,7 @@ class Intro extends Component {
 								offset={500}
 								onClick={this.onClick}
 							>
-								Portfolio
+								ABOUT ME
 							</Button>
 						</Fade>
 					</Grid>
