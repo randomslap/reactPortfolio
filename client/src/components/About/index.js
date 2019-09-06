@@ -12,7 +12,7 @@ import {
 	ListItemAvatar,
 	ListItemIcon,
 	Box,
-	Slide
+	Zoom
 } from "@material-ui/core";
 import PhotoIcon from "@material-ui/icons/Photo";
 import GestureIcon from "@material-ui/icons/Gesture";
@@ -29,8 +29,7 @@ import {
 	faPassport,
 	faLock
 } from "@fortawesome/free-solid-svg-icons";
-import VisibilitySensor from "react-visibility-sensor";
-import { Animated } from "react-animated-css";
+import ReactFullpage from "@fullpage/react-fullpage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { connect } from "react-redux";
 import { setSecondSlide } from "../../actions/slidesActions";
@@ -65,9 +64,6 @@ class About extends Component {
 				col: true
 			});
 		}, 3000);
-		setTimeout(() => {
-			this.scheduleNextUpdate();
-		}, 1000);
 	}
 
 	scheduleNextUpdate() {
@@ -172,178 +168,245 @@ class About extends Component {
 	componentWillUnmount() {
 		clearTimeout(this.timer);
 	}
+	afterLoad = (origin, destination, direction) => {
+		if (destination.index === 1) {
+			this.scheduleNextUpdate();
+		}
+	};
 	render() {
+		const anchors = ["About Me", "My Skills"];
 		return (
-			<Container fixed id="about">
-				<Grid
-					container
-					direction="row"
-					justify="center"
-					alignItems="center"
-				>
-					<Grid
-						container
-						direction="row"
-						justify="center"
-						alignItems="center"
-						id="main"
-					>
-						<Grid
-							container
-							direction="row"
-							justify="center"
-							alignItems="center"
-						>
-							<Grid item md={12}>
-								<Paper elevation={0.5}>
-									<Typography variant="h4" align="center">
-										About Me
-									</Typography>
-								</Paper>
-							</Grid>
-						</Grid>
-						<Grid
-							container
-							direction="row"
-							justify="center"
-							alignItems="center"
-						>
-							<Grid item md={12}>
-								<Paper elevation={0.5}>
-									<Typography variant="body1" align="left">
-										I am a full-stack web developer that is
-										always interested in learning something
-										new. I am currently proficient in
-										JavaScript, however, I am familiar with
-										C++ and Java. My
-									</Typography>
-								</Paper>
-							</Grid>
-						</Grid>
-					</Grid>
-					<Box mb={4} mt={100}>
-						<Grid
-							container
-							direction="row"
-							justify="center"
-							alignItems="center"
-						>
-							<Grid item md={12}>
-								<Typography
-									id="skills"
-									variant="h4"
-									align="center"
+			<ReactFullpage
+				licenseKey={null} //will buy license when complete
+				navigation
+				navigationTooltips={anchors}
+				scrollOverflow={true}
+				sectionsColor={["white", "white"]}
+				afterLoad={this.afterLoad.bind(this)}
+				render={({ state, fullpageApi }) => {
+					return (
+						<Container fixed id="about" id="fullpage-wrapper">
+							<Grid
+								container
+								direction="row"
+								justify="center"
+								alignItems="center"
+							>
+								<Grid
+									container
+									direction="row"
+									justify="center"
+									alignItems="center"
+									id="main"
+									className="section section1"
 								>
-									My Skills
-								</Typography>
-							</Grid>
-						</Grid>
-					</Box>
-
-					<Grid
-						container
-						direction="row"
-						justify="space-evenly"
-						spacing={2}
-					>
-						<Grid container item md={4} xs={12} direction="column">
-							<Typography align="center">
-								<FontAwesomeIcon
-									icon={faPhotoVideo}
-									size="4x"
-								/>
-							</Typography>
-							<Typography variant="h6" align="center">
-								Media
-							</Typography>
-							<Divider variant="middle" />
-							<Grid container direction="row" justify="center">
-								<Grid item lg={7} md={12} sm={7} xs={9}>
-									<List dense={true}>
-										{this.state.mediaList.map((item, i) => {
-											return (
-												<Animated
-													animationIn="zoomIn"
-													animationOut="zoomOut"
-													animationInDuration={100}
-													animationOutDuration={100}
-													isVisible={this.state.col}
-													key={i}
+									<Grid
+										container
+										direction="row"
+										justify="center"
+										alignItems="center"
+									>
+										<Grid item md={12}>
+											<Paper elevation={0.5}>
+												<Typography
+													variant="h4"
+													align="center"
 												>
-													<ListItem>
-														<ListItemAvatar>
-															{item.icon}
-														</ListItemAvatar>
-														<ListItemText>
-															<Typography align="center">
-																{item.name}
-															</Typography>
-														</ListItemText>
-													</ListItem>
-												</Animated>
-											);
-										})}
-									</List>
+													About Me
+												</Typography>
+											</Paper>
+										</Grid>
+									</Grid>
+									<Grid
+										container
+										direction="row"
+										justify="center"
+										alignItems="center"
+									>
+										<Grid item md={12}>
+											<Paper elevation={0.5}>
+												<Typography
+													variant="body1"
+													align="left"
+												>
+													I am a full-stack web
+													developer that is always
+													interested in learning
+													something new. I am
+													currently proficient in
+													JavaScript, however, I am
+													familiar with C++ and Java.
+												</Typography>
+											</Paper>
+										</Grid>
+									</Grid>
 								</Grid>
-							</Grid>
-						</Grid>
-						<Grid container item md={4} xs={12} direction="column">
-							<Typography align="center">
-								<FontAwesomeIcon icon={faFileCode} size="4x" />
-							</Typography>
-							<Typography variant="h6" align="center">
-								Web Development
-							</Typography>
-							<Divider variant="middle" />
-							<Grid container direction="row" justify="center">
-								<Grid item lg={7} md={7} xs={7}>
-									<List dense={true}>
-										{this.state.webDevList.map(
-											(item, i) => {
-												return (
-													<Animated
-														animationIn="zoomIn"
-														animationOut="zoomOut"
-														animationInDuration={
-															100
-														}
-														animationOutDuration={
-															100
-														}
-														isVisible={
-															this.state.col
-														}
-														key={i}
+								<div className="section section 2">
+									<Grid
+										container
+										direction="row"
+										justify="center"
+										alignItems="center"
+									>
+										<Grid item md={12}>
+											<Typography
+												id="skills"
+												variant="h4"
+												align="center"
+											>
+												My Skills
+											</Typography>
+										</Grid>
+									</Grid>
+
+									<Grid
+										container
+										direction="row"
+										justify="space-evenly"
+										spacing={2}
+									>
+										<Grid
+											container
+											item
+											md={4}
+											xs={12}
+											direction="column"
+										>
+											<Typography align="center">
+												<FontAwesomeIcon
+													icon={faPhotoVideo}
+													size="4x"
+												/>
+											</Typography>
+											<Typography
+												variant="h6"
+												align="center"
+											>
+												Media
+											</Typography>
+											<Divider variant="middle" />
+											<Grid
+												container
+												direction="row"
+												justify="center"
+											>
+												<Grid
+													item
+													lg={7}
+													md={12}
+													sm={7}
+													xs={9}
+												>
+													<List
+														dense={true}
+														className="list"
 													>
-														<ListItem>
-															<ListItemAvatar>
-																{item.icon}
-															</ListItemAvatar>
-															<ListItemText>
-																<Typography align="center">
-																	{item.name}
-																</Typography>
-															</ListItemText>
-														</ListItem>
-													</Animated>
-												);
-											}
-										)}
-									</List>
-								</Grid>
+														{this.state.mediaList.map(
+															(item, i) => {
+																return (
+																	<Zoom
+																		in={
+																			true
+																		}
+																		key={i}
+																	>
+																		<ListItem>
+																			<ListItemAvatar>
+																				{
+																					item.icon
+																				}
+																			</ListItemAvatar>
+																			<ListItemText>
+																				<Typography align="center">
+																					{
+																						item.name
+																					}
+																				</Typography>
+																			</ListItemText>
+																		</ListItem>
+																	</Zoom>
+																);
+															}
+														)}
+													</List>
+												</Grid>
+											</Grid>
+										</Grid>
+										<Grid
+											container
+											item
+											md={4}
+											xs={12}
+											direction="column"
+										>
+											<Typography align="center">
+												<FontAwesomeIcon
+													icon={faFileCode}
+													size="4x"
+												/>
+											</Typography>
+											<Typography
+												variant="h6"
+												align="center"
+											>
+												Web Development
+											</Typography>
+											<Divider variant="middle" />
+											<Box mb={10}>
+												<Grid
+													container
+													direction="row"
+													justify="center"
+													className="list"
+												>
+													<Grid
+														item
+														lg={7}
+														md={7}
+														xs={7}
+													>
+														<List dense={true}>
+															{this.state.webDevList.map(
+																(item, i) => {
+																	return (
+																		<Zoom
+																			in={
+																				true
+																			}
+																			key={
+																				i
+																			}
+																		>
+																			<ListItem>
+																				<ListItemAvatar>
+																					{
+																						item.icon
+																					}
+																				</ListItemAvatar>
+																				<ListItemText>
+																					<Typography align="center">
+																						{
+																							item.name
+																						}
+																					</Typography>
+																				</ListItemText>
+																			</ListItem>
+																		</Zoom>
+																	);
+																}
+															)}
+														</List>
+													</Grid>
+												</Grid>
+											</Box>
+										</Grid>
+									</Grid>
+								</div>
 							</Grid>
-						</Grid>
-					</Grid>
-				</Grid>
-				<Grid
-					container
-					direction="row"
-					justify="center"
-					alignItems="center"
-				>
-					hello
-				</Grid>
-			</Container>
+						</Container>
+					);
+				}}
+			/>
 		);
 	}
 }

@@ -4,17 +4,15 @@ import { Container, Grid, Button, Paper } from "@material-ui/core";
 import { connect } from "react-redux";
 import { setSecondSlide } from "../../actions/slidesActions";
 
-
 class Portfolio extends Component {
 	render() {
 		return (
-			<Container fixed id="about">
+			<Container fixed>
 				<Grid
 					container
 					direction="row"
 					justify="center"
 					alignItems="center"
-					
 				>
 					<Grid item md={3}>
 						<Paper>Hello</Paper>

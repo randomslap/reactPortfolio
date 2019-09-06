@@ -158,7 +158,15 @@ canvas {
 	z-index: 1;
 }
 
-#main {
-	height: 100%;
-	min-height: 100vh;
+#fullpage {
+	z-index: 0 !important;
+}
+
+.list {
+	height: 100% !important;
+	min-height: 35em !important;
+}
+
+.fp-tooltip {
+	color: black !important;
 }

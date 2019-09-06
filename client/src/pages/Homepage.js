@@ -37,13 +37,13 @@ class Home extends Component {
 	render() {
 		return (
 			<div>
-				<Slide in={!this.state.navbar} direction="down">
+				<Slide in={this.state.navbar} direction="down">
 					<div>
 						<Navbar />
 					</div>
 				</Slide>
 				<Fade
-					in={this.props.slide.index === 1}
+					in={this.props.slide.index === 0}
 					timeout={{ enter: 300, exit: 300 }}
 					mountOnEnter
 					unmountOnExit
@@ -66,7 +66,7 @@ class Home extends Component {
 					</div>
 				</Zoom>
 				<Zoom
-					in={this.props.slide.index === 0}
+					in={this.props.slide.index === 1}
 					timeout={{ enter: 500, exit: 100 }}
 					style={{
 						transitionDelay: !this.state.navbar ? "500ms" : "0ms"
