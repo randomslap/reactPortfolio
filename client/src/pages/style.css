@@ -25,6 +25,9 @@ canvas {
 	color: black !important;
 }
 
+.MuiSnackbarContent-root {
+	background-color: transparent !important;
+}
 .MuiDivider-root {
 	background-color: black !important;
 }
@@ -213,18 +216,18 @@ img#avatar {
 	max-height: 80vh;
 }
 
-button#mySkills{
+button#mySkills {
 	background-color: transparent;
 	border-style: none;
 	transition: top ease 0.5s;
 }
-button#mySkills:focus{
+button#mySkills:focus {
 	background-color: transparent;
 	border-style: none;
-	outline: 0
+	outline: 0;
 }
 
 button#mySkills:hover {
 	top: -10px;
-	background-color: transparent
+	background-color: transparent;
 }

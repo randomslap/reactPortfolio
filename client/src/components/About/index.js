@@ -229,21 +229,14 @@ class About extends Component {
 										>
 											<Grid
 												container
+												item
+												md={6}
 												justify="center"
 												alignItems="center"
-												item
-												md={12}
 											>
 												<img id="avatar" src={image} />
 											</Grid>
-										</Grid>
-										<Grid
-											container
-											direction="row"
-											justify="center"
-											alignItems="center"
-										>
-											<Grid item md={12}>
+											<Grid item md={6}>
 												<Paper elevation={0.5}>
 													<Typography
 														variant="body1"

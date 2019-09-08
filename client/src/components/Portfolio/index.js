@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import { Container, Grid, Button, Paper } from "@material-ui/core";
+import { Container, Grid, Button, Paper, Typography } from "@material-ui/core";
 import { connect } from "react-redux";
 import { setSecondSlide } from "../../actions/slidesActions";
 
@@ -14,8 +14,10 @@ class Portfolio extends Component {
 					justify="center"
 					alignItems="center"
 				>
-					<Grid item md={3}>
-						<Paper>Hello</Paper>
+					<Grid container item md={3} justify="center" alignItems="center">
+						<Paper>
+							<Typography>WIP</Typography>
+						</Paper>
 					</Grid>
 				</Grid>
 			</Container>
