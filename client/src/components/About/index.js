@@ -12,11 +12,16 @@ import {
 	ListItemAvatar,
 	ListItemIcon,
 	Box,
-	Zoom
+	Zoom,
+	Slide,
+	Card,
+	CardMedia,
+	CardContent
 } from "@material-ui/core";
 import PhotoIcon from "@material-ui/icons/Photo";
 import GestureIcon from "@material-ui/icons/Gesture";
 import MovieIcon from "@material-ui/icons/Movie";
+import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import {
 	faPhotoVideo,
 	faCube,
@@ -33,25 +38,19 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { connect } from "react-redux";
 import { setSecondSlide } from "../../actions/slidesActions";
+import image from "../../pages/assets/images/bio.jpg";
+import { typography } from "@material-ui/system";
 
 class About extends Component {
 	state = {
 		loaded: false,
-		col: false,
+		skills: false,
 		mediaList: [],
 		mediaItemsRendered: 0,
 		webDevList: [],
-		webItemsRendered: 0
+		webItemsRendered: 0,
+		toggleHover: false
 	};
-
-	getInitialState() {
-		return {
-			loaded: false,
-			col: false,
-			webDevList: [],
-			rendered: 0
-		};
-	}
 
 	componentDidMount() {
 		console.log("true");
@@ -61,9 +60,9 @@ class About extends Component {
 		});
 		setTimeout(() => {
 			this.setState({
-				col: true
+				skills: true
 			});
-		}, 3000);
+		}, 1500);
 	}
 
 	scheduleNextUpdate() {
@@ -75,7 +74,7 @@ class About extends Component {
 			{ name: "Adobe Photoshop", icon: <PhotoIcon /> },
 			{ name: "Adobe Illustrator", icon: <GestureIcon /> },
 			{
-				name: "Adobe Premiere",
+				name: "Adobe Premiere Pro",
 				icon: <MovieIcon />
 			},
 			{
@@ -173,8 +172,10 @@ class About extends Component {
 			this.scheduleNextUpdate();
 		}
 	};
+
 	render() {
 		const anchors = ["About Me", "My Skills"];
+
 		return (
 			<ReactFullpage
 				licenseKey={null} //will buy license when complete
@@ -182,7 +183,8 @@ class About extends Component {
 				navigationTooltips={anchors}
 				showActiveTooltip={true}
 				scrollOverflow={true}
-				sectionsColor={["#4D4D4D", "#4D4D4D"]}
+				responsiveHeight={100}
+				sectionsColor={["transparent", "transparent"]}
 				afterLoad={this.afterLoad.bind(this)}
 				render={({ state, fullpageApi }) => {
 					return (
@@ -201,62 +203,137 @@ class About extends Component {
 									id="main"
 									className="section section1"
 								>
+									<Box mb={10}>
+										<Grid
+											container
+											direction="row"
+											justify="center"
+											alignItems="center"
+										>
+											<Grid item md={12}>
+												<Paper elevation={0.5}>
+													<Typography
+														variant="h4"
+														align="center"
+													>
+														About Me
+													</Typography>
+												</Paper>
+											</Grid>
+										</Grid>
+										<Grid
+											container
+											direction="row"
+											justify="center"
+											alignItems="center"
+										>
+											<Grid
+												container
+												justify="center"
+												alignItems="center"
+												item
+												md={12}
+											>
+												<img id="avatar" src={image} />
+											</Grid>
+										</Grid>
+										<Grid
+											container
+											direction="row"
+											justify="center"
+											alignItems="center"
+										>
+											<Grid item md={12}>
+												<Paper elevation={0.5}>
+													<Typography
+														variant="body1"
+														align="left"
+													>
+														I am a full-stack web
+														developer that is always
+														interested in learning
+														something new. I am
+														currently proficient in
+														JavaScript, however, I
+														am familiar with C++ and
+														Java. As a full-stack
+														web developer, I am
+														capable of creating MERN
+														stack applications. In
+														fact, this portfolio is
+														using MongoDB,
+														Express.js, React.js,
+														and Node.js. As a
+														front-end developer, I
+														like to keep the UI/UX
+														dynamic with animations.
+														As a back-end developer,
+														I prefer to use MongoDB
+														as a database and
+														Node.js as a run-time
+														enviroment. Other than a
+														web developer, I am also
+														a cinematographer and an
+														illustrator. I am
+														proficient with Adobe
+														Premiere Pro and Adobe
+														Illustrator. If you have
+														any questions, feel free
+														to contact me!
+													</Typography>
+												</Paper>
+											</Grid>
+										</Grid>
+									</Box>
 									<Grid
 										container
 										direction="row"
 										justify="center"
 										alignItems="center"
 									>
-										<Grid item md={12}>
-											<Paper elevation={0.5}>
-												<Typography
-													variant="h4"
-													align="center"
-												>
-													About Me
-												</Typography>
-											</Paper>
-										</Grid>
-									</Grid>
-									<Grid
-										container
-										direction="row"
-										justify="center"
-										alignItems="center"
-									>
-										<Grid item md={12}>
-											<Paper elevation={0.5}>
-												<Typography
-													variant="body1"
-													align="left"
-												>
-													I am a full-stack web
-													developer that is always
-													interested in learning
-													something new. I am
-													currently proficient in
-													JavaScript, however, I am
-													familiar with C++ and Java.
-													As a full-stack web
-													developer, I am capable of
-													creating MERN stack
-													applications. In fact, this
-													portfolio is using MongoDB,
-													Express.js, React.js, and
-													Node.js. As a front-end
-													developer, I like to keep
-													the UI/UX dynamic. As a
-													back-end developer, I prefer
-													to use MongoDB as a database
-													and Node.js as a run-time
-													enviroment. If you have any
-													questions, feel free to
-													contact me!
-												</Typography>
-											</Paper>
-										</Grid>
+										<Slide
+											direction="up"
+											in={this.state.skills}
+										>
+											<Button
+												variant="outlined"
+												onClick={() =>
+													fullpageApi.moveSectionDown()
+												}
+											>
+												<Grid container>
+													<Grid
+														container
+														direction="row"
+														justify="center"
+														alignItems="center"
+													>
+														<div
+															style={{
+																height: "10px"
+															}}
+														>
+															My Skills
+														</div>
+													</Grid>
+													<Grid
+														container
+														direction="row"
+														justify="center"
+														alignItems="center"
+													>
+														<KeyboardArrowDownIcon
+															style={{
+																fontSize: 28
+															}}
+														/>
+													</Grid>
+												</Grid>
+											</Button>
+										</Slide>
 									</Grid>
 								</Grid>
+
 								<div className="section section 2">
 									<Grid
 										container
@@ -290,101 +367,37 @@ class About extends Component {
 											xs={12}
 											direction="column"
 										>
-											<Typography align="center">
-												<FontAwesomeIcon
-													icon={faPhotoVideo}
-													size="4x"
-												/>
-											</Typography>
-											<Typography
-												variant="h6"
-												align="center"
-											>
-												Media
-											</Typography>
-											<Divider variant="middle" />
-											<Grid
-												container
-												direction="row"
-												justify="center"
-											>
-												<Grid
-													item
-													lg={7}
-													md={12}
-													sm={7}
-													xs={9}
+											<div className="listSkills">
+												<Typography align="center">
+													<FontAwesomeIcon
+														icon={faPhotoVideo}
+														size="4x"
+													/>
+												</Typography>
+												<Typography
+													variant="h6"
+													align="center"
 												>
-													<List
-														dense={true}
-														className="list"
-													>
-														{this.state.mediaList.map(
-															(item, i) => {
-																return (
-																	<Zoom
-																		in={
-																			true
-																		}
-																		key={i}
-																	>
-																		<ListItem>
-																			<ListItemAvatar>
-																				{
-																					item.icon
-																				}
-																			</ListItemAvatar>
-																			<ListItemText>
-																				<Typography align="center">
-																					{
-																						item.name
-																					}
-																				</Typography>
-																			</ListItemText>
-																		</ListItem>
-																	</Zoom>
-																);
-															}
-														)}
-													</List>
-												</Grid>
-											</Grid>
-										</Grid>
-										<Grid
-											container
-											item
-											md={4}
-											xs={12}
-											direction="column"
-										>
-											<Typography align="center">
-												<FontAwesomeIcon
-													icon={faFileCode}
-													size="4x"
-												/>
-											</Typography>
-											<Typography
-												variant="h6"
-												align="center"
-											>
-												Web Development
-											</Typography>
-											<Divider variant="middle" />
-											<Box mb={10}>
+													Media
+												</Typography>
+												<Divider variant="middle" />
 												<Grid
 													container
 													direction="row"
 													justify="center"
-													className="list"
 												>
 													<Grid
 														item
 														lg={7}
-														md={7}
-														xs={7}
+														md={12}
+														sm={7}
+														xs={9}
 													>
-														<List dense={true}>
-															{this.state.webDevList.map(
+														<List
+															dense={true}
+															className="list"
+														>
+															{this.state.mediaList.map(
 																(item, i) => {
 																	return (
 																		<Zoom
@@ -401,7 +414,7 @@ class About extends Component {
 																						item.icon
 																					}
 																				</ListItemAvatar>
-																				<ListItemText>
+																				<ListItemText class="listItem">
 																					<Typography align="center">
 																						{
 																							item.name
@@ -416,7 +429,80 @@ class About extends Component {
 														</List>
 													</Grid>
 												</Grid>
-											</Box>
+											</div>
+										</Grid>
+										<Grid
+											container
+											item
+											md={4}
+											xs={12}
+											direction="column"
+										>
+											<div className="listSkills">
+												<Typography align="center">
+													<FontAwesomeIcon
+														icon={faFileCode}
+														size="4x"
+													/>
+												</Typography>
+												<Typography
+													variant="h6"
+													align="center"
+												>
+													Web Development
+												</Typography>
+												<Divider variant="middle" />
+												<Box mb={10}>
+													<Grid
+														container
+														direction="row"
+														justify="center"
+														className="list"
+													>
+														<Grid
+															item
+															lg={7}
+															md={7}
+															xs={7}
+														>
+															<List dense={true}>
+																{this.state.webDevList.map(
+																	(
+																		item,
+																		i
+																	) => {
+																		return (
+																			<Zoom
+																				in={
+																					true
+																				}
+																				key={
+																					i
+																				}
+																			>
+																				<ListItem>
+																					<ListItemAvatar>
+																						{
+																							item.icon
+																						}
+																					</ListItemAvatar>
+																					<ListItemText>
+																						<Typography align="center">
+																							{
+																								item.name
+																							}
+																						</Typography>
+																					</ListItemText>
+																				</ListItem>
+																			</Zoom>
+																		);
+																	}
+																)}
+															</List>
+														</Grid>
+													</Grid>
+												</Box>
+											</div>
 										</Grid>
 									</Grid>
 								</div>

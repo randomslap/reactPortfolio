@@ -10,6 +10,7 @@ class Intro extends Component {
 		super(props);
 		this.selector1 = React.createRef();
 		this.selector2 = React.createRef();
+		this.selector3 = React.createRef();
 		this.state = {
 			index: this.props.slide.index,
 			loaded: false
@@ -19,10 +20,17 @@ class Intro extends Component {
 		console.log(this.props.slide.index);
 		const node = ReactDOM.findDOMNode(this);
 		let textWrapper1 = node.querySelector(".ml11 .letters");
+		let textWrapper3 = node.querySelector(".ml11 .name");
 		textWrapper1.innerHTML = textWrapper1.textContent
 			.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>")
-			.replace(",", "<span class='letter'>$&</span>")
-			.replace("Kent Okazaki", "<span class='letter1'>$&</span>");
+			.replace(",", "<span class='letter'>$&</span>");
+		textWrapper3.innerHTML = textWrapper3.textContent
+			.replace(
+				/([^\x00-\x80]|\w)/g,
+				"<span class='letter name'><b>$&</b></span>"
+			)
+			
+
 		let textWrapper2 = node.querySelector(".ml12");
 		textWrapper2.innerHTML = textWrapper2.textContent
 			.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>")
@@ -41,15 +49,15 @@ class Intro extends Component {
 				targets: ".ml11 .line",
 				translateX: [0, 510],
 				easing: "easeOutExpo",
-				duration: 650,
-				delay: -300
+				duration: 600,
+				delay: -400
 			})
 			.add(
 				{
 					targets: ".ml11 .letter",
 					opacity: [0, 1],
 					easing: "easeOutExpo",
-					duration: 650,
+					duration: 1050,
 					offset: "-=0",
 					delay: function(el, i) {
 						return 25 * (i + 2);
@@ -101,7 +109,10 @@ class Intro extends Component {
 							<span class="text-wrapper">
 								<span class="line line1" />
 								<span ref={this.selector1} class="letters">
-									Hi, my name is Kent Okazaki
+									Hi, my name is{" "}
+								</span>
+								<span ref={this.selector3} class="name">
+									Kent Okazaki
 								</span>
 							</span>
 						</h1>

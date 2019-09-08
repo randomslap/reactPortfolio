@@ -1,7 +1,7 @@
 body {
 	margin: 0px !important;
-	background-color: #4d4d4d;
-	color: white !important;
+	background-color: white;
+	color: black !important;
 }
 
 h1,
@@ -22,20 +22,20 @@ canvas {
 }
 
 .MuiPaper-root {
-	color: white !important;
+	color: black !important;
 }
 
 .MuiDivider-root {
-	background-color: white !important;
+	background-color: black !important;
 }
 
 .MuiBottomNavigationAction-label {
-	color: white !important;
+	color: black !important;
 	font-family: "Manjari", sans-serif !important;
 }
 
 .MuiBottomNavigation-root {
-	background-color: #4d4d4d !important;
+	background-color: transparent !important;
 	color: white !important;
 }
 
@@ -43,11 +43,15 @@ canvas {
 	font-family: "Manjari", sans-serif !important;
 }
 
+li div p.MuiTypography-body1 {
+	line-height: 2vh;
+}
+
 .MuiContainer-root {
-	background-color: #4d4d4d;
+	background-color: transparent;
 }
 .MuiContainer-root#intro {
-	margin-top: 350px;
+	margin-top: 30vh;
 }
 
 .MuiContainer-root#about {
@@ -57,28 +61,29 @@ canvas {
 }
 
 .MuiAppBar-colorDefault {
-	background-color: #4d4d4d !important;
+	background-color: transparent !important;
 	box-shadow: none !important;
 	width: 500 !important;
 }
 
 .MuiPaper-rounded {
 	padding: 1em;
-	background-color: #4d4d4d !important;
+	background-color: transparent !important;
 }
 
 .MuiButton-root {
-	color: white !important;
-	border-color: white !important;
+	color: black !important;
+	border-color: black !important;
 }
 .MuiButton-label {
 	font-family: "Manjari", sans-serif !important;
+	padding-top: 5px;
 }
 .MuiButton-outlined {
 	border-radius: 0px !important;
 }
 .MuiTouchRipple-root {
-	color: #00a7e8 !important;
+	color: black !important;
 }
 
 .MuiListItemText-root {
@@ -86,6 +91,7 @@ canvas {
 }
 .MuiListItemAvatar-root {
 	text-align: center;
+	min-width: 52px !important;
 }
 
 .ml11 {
@@ -109,7 +115,7 @@ canvas {
 	left: 0;
 	height: 100%;
 	width: 3px;
-	background-color: #00a7e8;
+	background-color: black;
 	transform-origin: 0 50%;
 }
 
@@ -146,13 +152,13 @@ canvas {
 	font-size: 1.2em;
 	font-weight: 200;
 	color: black;
-	background-color: #4d4d4d;
+	background-color: transparent;
 	text-align: center;
 	transition: all 0.2s;
 }
 
 .ml13:hover {
-	color: #4d4d4d;
+	color: black;
 	background-color: black;
 }
 
@@ -166,7 +172,7 @@ canvas {
 
 #fullpage {
 	z-index: 0 !important;
-	background-color: #4d4d4d;
+	background-color: white;
 }
 
 .list {
@@ -177,21 +183,48 @@ canvas {
 	border-radius: 0px !important;
 }
 .fp-tooltip {
-	color: white !important;
+	color: black !important;
 	font-family: "Manjari", sans-serif !important;
 	top: 1px !important;
 }
 
 .fp-sr-only {
-	background-color: #00a7e8 !important;
+	background-color: black !important;
 	font-family: "Manjari", sans-serif !important;
 }
 
 a span {
-	background-color: #00a7e8 !important;
 	border-radius: 0px !important;
 }
 
 svg {
-	color: #00a7e8 !important;
+	color: black !important;
+}
+
+img#avatar {
+	width: 100%;
+	max-width: 30vh;
+	height: auto;
+	max-height: 30vh;
+	border-radius: 5px;
+}
+
+.listSkills {
+	max-height: 80vh;
+}
+
+button#mySkills{
+	background-color: transparent;
+	border-style: none;
+	transition: top ease 0.5s;
+}
+button#mySkills:focus{
+	background-color: transparent;
+	border-style: none;
+	outline: 0
+}
+
+button#mySkills:hover {
+	top: -10px;
+	background-color: transparent
 }
