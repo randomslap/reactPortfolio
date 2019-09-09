@@ -81,7 +81,7 @@ class Portfolio extends Component {
 							>
 								<Fade
 									in={this.state.loaded}
-									timeout={{ enter: 1000, exit: 300 }}
+									timeout={{ enter: 300, exit: 300 }}
 									style={{
 										transitionDelay: "250ms"
 									}}
