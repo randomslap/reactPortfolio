@@ -176,7 +176,9 @@ class Intro extends Component {
 				<Snackbar
 					anchorOrigin={{ vertical: "top", horizontal: "right" }}
 					message={
-						<span>This site is not mobile responsive yet nor fully completed.</span>
+						<span>
+							This site is not mobile responsive yet nor complete.
+						</span>
 					}
 					open={this.state.snackbar}
 				/>
