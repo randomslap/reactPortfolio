@@ -6,6 +6,9 @@ import Navbar from "../components/Navbar";
 import Intro from "../components/Intro";
 import About from "../components/About";
 import Portfolio from "../components/Portfolio";
+import Contact from "../components/Contact";
+import API from "../utils/API";
+import { callProjects } from "../actions/apiActions";
 
 class Home extends Component {
 	state = {
@@ -19,8 +22,12 @@ class Home extends Component {
 		this.setState({
 			index: this.props.slide.index
 		});
+		API.getAllProjects().then(res => {
+			console.log(res);
+			return this.props.callProjects(res.data)
+		});
 	}
-	componentDidUpdate(prevProps, prevState) {
+	componentDidUpdate() {
 		setTimeout(() => {
 			if (this.props.slide.index !== 0) {
 				this.setState({
@@ -78,6 +85,19 @@ class Home extends Component {
 						<About />
 					</div>
 				</Zoom>
+				<Zoom
+					in={this.props.slide.index === 3}
+					timeout={{ enter: 500, exit: 100 }}
+					style={{
+						transitionDelay: !this.state.navbar ? "500ms" : "0ms"
+					}}
+					mountOnEnter
+					unmountOnExit
+				>
+					<div>
+						<Contact />
+					</div>
+				</Zoom>
 			</div>
 		);
 	}
@@ -86,4 +106,9 @@ class Home extends Component {
 const mapStateToProps = state => ({
 	slide: state.index
 });
-export default connect(mapStateToProps)(Home);
+export default connect(
+	mapStateToProps,
+	{
+		callProjects
+	}
+)(Home);

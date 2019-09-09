@@ -1,4 +1,4 @@
-import { FIRST, SECOND } from "../actions/types";
+import { FIRST, SECOND, THIRD } from "../actions/types";
 
 const initialState = {
 	index: 0
@@ -13,6 +13,10 @@ export default function(state = initialState, action) {
 		case SECOND:
 			return {
 				index: 2
+			};
+		case THIRD:
+			return {
+				index: 3
 			};
 		default:
 			return state;

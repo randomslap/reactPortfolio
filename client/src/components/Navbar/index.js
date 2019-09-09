@@ -11,19 +11,24 @@ import {
 } from "@material-ui/core";
 import PersonIcon from "@material-ui/icons/Person";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
+import ContactMailIcon from "@material-ui/icons/ContactMail";
 import { connect } from "react-redux";
-import { setFirstSlide, setSecondSlide } from "../../actions/slidesActions";
+import {
+	setFirstSlide,
+	setSecondSlide,
+	setThirdSlide
+} from "../../actions/slidesActions";
 
 class Navbar extends Component {
 	onChange = (e, value) => {
 		e.preventDefault();
 		switch (value) {
 			case 1:
-				console.log(value);
 				return this.props.setFirstSlide();
 			case 2:
-				console.log(value);
 				return this.props.setSecondSlide();
+			case 3:
+				return this.props.setThirdSlide();
 			default:
 				return null;
 		}
@@ -32,7 +37,7 @@ class Navbar extends Component {
 		return (
 			<AppBar position="static" color="default">
 				<Toolbar>
-					<Grid container direction="row">
+					<Grid container direction="row" justify="center">
 						<Grid item sm={12} md={12} lg={12}>
 							<BottomNavigation
 								showLabels
@@ -51,6 +56,11 @@ class Navbar extends Component {
 									label="Portfolio"
 									value={2}
 								/>
+								<BottomNavigationAction
+									icon={<ContactMailIcon />}
+									label="Contact Me"
+									value={3}
+								/>
 							</BottomNavigation>
 						</Grid>
 					</Grid>
@@ -65,5 +75,5 @@ const mapStateToProps = state => ({
 });
 export default connect(
 	mapStateToProps,
-	{ setFirstSlide, setSecondSlide }
+	{ setFirstSlide, setSecondSlide, setThirdSlide }
 )(Navbar);

@@ -97,6 +97,23 @@ li div p.MuiTypography-body1 {
 	min-width: 52px !important;
 }
 
+.MuiCard-root {
+	margin-top: 15vh;
+}
+
+.MuiCardContent-root {
+	min-height: 30vh;
+	max-height: 30vh;
+}
+
+.MuiPaper-root span {
+	font-family: "Manjari", sans-serif;
+}
+
+.MuiPaper-root span#progress {
+	float: right;
+}
+
 .ml11 {
 	font-weight: 500;
 	font-size: 2.5em;
