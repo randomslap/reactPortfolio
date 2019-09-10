@@ -65,8 +65,8 @@ class Portfolio extends Component {
 				<Grid
 					container
 					direction="row"
-					justify="space-evenly"
-					spacing={1}
+					justify="center"
+					spacing={2}
 					alignItems="center"
 				>
 					{this.state.projects.map((project, i) => {
@@ -74,7 +74,9 @@ class Portfolio extends Component {
 							<Grid
 								container
 								item
-								md={3}
+								lg={3}
+								md={4}
+								sm={6}
 								justify="center"
 								alignItems="center"
 								key={i}
@@ -120,12 +122,13 @@ class Portfolio extends Component {
 										/>
 										<span>0</span>
 										<span id="progress">100</span>
-										<CardActions>
+										<CardActions className="cardActions">
 											<Button
 												size="small"
 												color="primary"
 												href={project.github}
 												target="_blank"
+												className="cardActions"
 											>
 												Github
 											</Button>
@@ -134,6 +137,7 @@ class Portfolio extends Component {
 												color="primary"
 												href={project.URL}
 												target="_blank"
+												className="cardActions"
 											>
 												Live version
 											</Button>

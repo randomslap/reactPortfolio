@@ -106,6 +106,10 @@ li div p.MuiTypography-body1 {
 	max-height: 30vh;
 }
 
+.MuiCardContent-root p {
+	line-height: 2vh;
+}
+
 .MuiPaper-root span {
 	font-family: "Manjari", sans-serif;
 }
@@ -247,4 +251,31 @@ button#mySkills:focus {
 button#mySkills:hover {
 	top: -10px;
 	background-color: transparent;
+}
+
+@media all and (max-width: 1279px) and (min-width: 600px) {
+	.MuiCardContent-root p{
+		font-size: 0.775rem !important;
+	}
+	.MuiCardContent-root h2{
+		font-size: 1.3rem !important;
+	}
+	.cardActions span {
+		font-size: 0.775rem !important;
+	}
+	.MuiPaper-root p {
+		font-size: 1.75vh !important;
+	}
+}
+
+@media all and (max-width: 540px) {
+	h1.ml11 {
+		font-size: 1.5rem;
+	}
+	span.line1 {
+		transform: scaleY(0) translateX(200px) !important;
+	}
+	h2.ml12 {
+		font-size: 1rem;
+	}
 }

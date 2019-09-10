@@ -181,7 +181,6 @@ class About extends Component {
 				licenseKey={null} //will buy license when complete
 				navigation
 				navigationTooltips={anchors}
-				showActiveTooltip={true}
 				scrollOverflow={true}
 				responsiveHeight={100}
 				sectionsColor={["transparent", "transparent"]}
@@ -230,13 +229,22 @@ class About extends Component {
 											<Grid
 												container
 												item
+												lg={6}
 												md={6}
+												sm={12}
+												xs={12}
 												justify="center"
 												alignItems="center"
 											>
 												<img id="avatar" src={image} />
 											</Grid>
-											<Grid item md={6}>
+											<Grid
+												item
+												lg={6}
+												md={6}
+												sm={12}
+												xs={12}
+											>
 												<Paper elevation={0.5}>
 													<Typography
 														variant="body1"
@@ -357,7 +365,8 @@ class About extends Component {
 											container
 											item
 											md={4}
-											xs={12}
+											sm={6}
+											xs={4}
 											direction="column"
 										>
 											<div className="listSkills">
@@ -428,7 +437,8 @@ class About extends Component {
 											container
 											item
 											md={4}
-											xs={12}
+											sm={6}
+											xs={4}
 											direction="column"
 										>
 											<div className="listSkills">
