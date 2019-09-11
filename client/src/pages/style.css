@@ -118,8 +118,29 @@ li div p.MuiTypography-body1 {
 	float: right;
 }
 
+.MuiListItem-dense {
+	padding-bottom: 0.25vh;
+	padding-top: 0.25vh;
+}
+
+.MuiListItemAvatar-root {
+	font-size: 2vh;
+}
+
+.MuiSvgIcon-root {
+	font-size: 3vh !important;
+}
+
 li div p.MuiTypography-body1 {
 	line-height: 1.5vh;
+}
+
+.listSkills p h6.MuiTypography-h6 {
+	font-size: 2.5vh;
+}
+
+.listSkills p svg {
+	font-size: 5vh;
 }
 
 .ml11 {

@@ -29,7 +29,7 @@ class Intro extends Component {
 			this.setState({
 				snackbar: false
 			});
-		}, 7500);
+		}, 10500);
 		console.log(this.props.slide.index);
 		const node = ReactDOM.findDOMNode(this);
 		let textWrapper1 = node.querySelector(".ml11 .letters");
@@ -177,7 +177,9 @@ class Intro extends Component {
 					anchorOrigin={{ vertical: "top", horizontal: "right" }}
 					message={
 						<span>
-							This site is not mobile responsive yet nor complete.
+							This site is not fully mobile responsive yet nor
+							complete. I am doing my best to complete it as soon
+							as I can!
 						</span>
 					}
 					open={this.state.snackbar}

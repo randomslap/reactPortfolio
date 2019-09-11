@@ -258,13 +258,15 @@ class About extends Component {
 														JavaScript, however, I
 														am familiar with C++ and
 														Java. As a full-stack
-														web developer, I am
-														capable of creating MERN
-														stack applications. In
-														fact, this portfolio is
-														using MongoDB,
+														web developer, one of my
+														capabilities is creating
+														MERN stack applications.
+														In fact, this portfolio
+														is using MongoDB,
 														Express.js, React.js,
-														and Node.js. As a
+														and Node.js. This site
+														is also using
+														React-Redux. As a
 														front-end developer, I
 														like to keep the UI/UX
 														dynamic with animations.
@@ -272,7 +274,14 @@ class About extends Component {
 														I prefer to use MongoDB
 														as a database and
 														Node.js as a run-time
-														enviroment. Other than a
+														enviroment. However, I
+														am also able to create
+														applications with MySQL
+														or Firebase. I am also
+														capable of creating an
+														authentication system
+														using JWT, Passport.js
+														and bCrypt. Other than a
 														web developer, I am also
 														a cinematographer and an
 														illustrator. I am
