@@ -118,6 +118,10 @@ li div p.MuiTypography-body1 {
 	float: right;
 }
 
+li div p.MuiTypography-body1 {
+	line-height: 1.5vh;
+}
+
 .ml11 {
 	font-weight: 500;
 	font-size: 2.5em;
@@ -254,10 +258,10 @@ button#mySkills:hover {
 }
 
 @media all and (max-width: 1279px) and (min-width: 600px) {
-	.MuiCardContent-root p{
+	.MuiCardContent-root p {
 		font-size: 0.775rem !important;
 	}
-	.MuiCardContent-root h2{
+	.MuiCardContent-root h2 {
 		font-size: 1.3rem !important;
 	}
 	.cardActions span {

@@ -342,7 +342,7 @@ class About extends Component {
 										justify="center"
 										alignItems="center"
 									>
-										<Box mb={7}>
+										<Box mb={3}>
 											<Grid item md={12}>
 												<Typography
 													id="skills"
