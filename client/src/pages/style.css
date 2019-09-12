@@ -264,9 +264,9 @@ svg {
 
 img#avatar {
 	width: 100%;
-	max-width: 20vh;
+	max-width: 42vh;
 	height: auto;
-	max-height: 30vh;
+	max-height: 42vh;
 	border-radius: 5px;
 }
 
@@ -302,6 +302,20 @@ button#mySkills:hover {
 	}
 	.MuiPaper-root p {
 		font-size: 1.75vh !important;
+	}
+}
+
+@media all and (max-width: 960px) {
+	img#avatar {
+		width: 100%;
+		max-width: 21vh;
+		height: auto;
+		max-height: 21vh;
+		border-radius: 5px;
+	}
+
+	div.MuiPaper-root p.MuiTypography-body1 {
+		font-size: 1.25vh !important;
 	}
 }
 
