@@ -405,7 +405,7 @@ class About extends Component {
 													Web Development
 												</Typography>
 												<Divider variant="middle" />
-												<Box mb={10}>
+												<Box mb={1}>
 													<Grid
 														container
 														direction="row"

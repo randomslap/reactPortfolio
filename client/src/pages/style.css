@@ -139,9 +139,6 @@ li div p.MuiTypography-body1 {
 	font-size: 4vh !important;
 }
 
-div.fp-tableCell div.MuiBox-root-237 {
-	margin-bottom: 20vh !important;
-}
 
 div.MuiPaper-root p.MuiTypography-body1 {
 	font-size: 2vh;
@@ -363,7 +360,5 @@ button#mySkills:hover {
 	.MuiContainer-root#intro {
 		margin-top: 10vh;
 	}
-	.MuiBox-root-237 {
-		margin-bottom: 1vh !important;
-	}
+
 }
