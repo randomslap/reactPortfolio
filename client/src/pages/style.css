@@ -135,6 +135,18 @@ li div p.MuiTypography-body1 {
 	line-height: 1.5vh;
 }
 
+.MuiTypography-h4 {
+	font-size: 4vh !important;
+}
+
+.MuiBox-root {
+	margin-bottom: 20vh !important;
+}
+
+div.MuiPaper-root p.MuiTypography-body1 {
+	font-size: 2vh;
+}
+
 .listSkills p h6.MuiTypography-h6 {
 	font-size: 2.5vh;
 }
@@ -252,7 +264,7 @@ svg {
 
 img#avatar {
 	width: 100%;
-	max-width: 30vh;
+	max-width: 20vh;
 	height: auto;
 	max-height: 30vh;
 	border-radius: 5px;
@@ -295,12 +307,24 @@ button#mySkills:hover {
 
 @media all and (max-width: 540px) {
 	h1.ml11 {
-		font-size: 1.5rem;
+		font-size: 1.25rem;
 	}
 	span.line1 {
 		transform: scaleY(0) translateX(200px) !important;
 	}
 	h2.ml12 {
 		font-size: 1rem;
+	}
+	div.MuiPaper-root p.MuiTypography-body1 {
+		font-size: 1vh !important;
+	}
+}
+
+@media all and (max-width: 850px) and (min-width: 568px) {
+	.MuiContainer-root#intro {
+		margin-top: 10vh;
+	}
+	.MuiBox-root-237 {
+		margin-bottom: 1vh !important;
 	}
 }

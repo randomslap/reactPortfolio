@@ -202,7 +202,7 @@ class About extends Component {
 									id="main"
 									className="section section1"
 								>
-									<Box mb={10}>
+									<Box mb={2}>
 										<Grid
 											container
 											direction="row"
@@ -242,7 +242,7 @@ class About extends Component {
 												item
 												lg={6}
 												md={6}
-												sm={12}
+												sm={6}
 												xs={12}
 											>
 												<Paper elevation={0.5}>
