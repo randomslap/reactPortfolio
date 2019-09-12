@@ -293,13 +293,13 @@ class About extends Component {
 														I prefer to use MongoDB
 														as a database and
 														Node.js as a run-time
-														enviroment. However, I
-														am also able of creating
+														environment. However, I
+														am also able to create 
 														applications with MySQL
 														or Firebase. I am also
 														capable of creating an
 														authentication system
-														using JWT, Passport.js
+														using JWT, Passport.js,
 														and bCrypt. Other than a
 														web developer, I am a
 														cinematographer and an
