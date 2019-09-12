@@ -13,6 +13,7 @@ import {
 	ListItemIcon,
 	Box,
 	Zoom,
+	Fade,
 	Slide,
 	Card,
 	CardMedia,
@@ -45,6 +46,7 @@ class About extends Component {
 	state = {
 		loaded: false,
 		skills: false,
+		image: false,
 		mediaList: [],
 		mediaItemsRendered: 0,
 		webDevList: [],
@@ -63,6 +65,12 @@ class About extends Component {
 				skills: true
 			});
 		}, 1500);
+
+		setTimeout(() => {
+			this.setState({
+				image: true
+			});
+		}, 1000);
 	}
 
 	scheduleNextUpdate() {
@@ -236,7 +244,12 @@ class About extends Component {
 												justify="center"
 												alignItems="center"
 											>
-												<img id="avatar" src={image} />
+												<Fade in={this.state.image}>
+													<img
+														id="avatar"
+														src={image}
+													/>
+												</Fade>
 											</Grid>
 											<Grid
 												item
@@ -516,7 +529,6 @@ class About extends Component {
 												</Grid>
 											</div>
 										</Grid>
-										
 									</Grid>
 								</div>
 							</Grid>

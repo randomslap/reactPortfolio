@@ -8,6 +8,7 @@ import {
 	Typography,
 	Card,
 	Fade,
+	Collapse,
 	CardActions,
 	CardContent,
 	CardMedia,
@@ -91,13 +92,23 @@ class Portfolio extends Component {
 									unmountOnExit
 								>
 									<Card>
-										<CardMedia
-											component="img"
-											alt={project.title}
-											height="140"
-											image={require(`../../pages/assets/images/${project.image}.jpg`)}
-											title={project.title}
-										/>
+										<Fade
+											in={this.state.loaded}
+											timeout={{ enter: 300, exit: 300 }}
+											style={{
+												transitionDelay: "500ms"
+											}}
+											mountOnEnter
+											unmountOnExit
+										>
+											<CardMedia
+												component="img"
+												alt={project.title}
+												height="140"
+												image={require(`../../pages/assets/images/${project.image}.jpg`)}
+												title={project.title}
+											/>
+										</Fade>
 										<CardContent>
 											<Typography
 												gutterBottom
