@@ -244,7 +244,13 @@ class About extends Component {
 												justify="center"
 												alignItems="center"
 											>
-												<Fade in={this.state.image}>
+												<Fade
+													in={this.state.image}
+													timeout={{
+														enter: 500,
+														exit: 500
+													}}
+												>
 													<img
 														id="avatar"
 														src={image}
