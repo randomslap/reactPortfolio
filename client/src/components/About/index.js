@@ -301,8 +301,8 @@ class About extends Component {
 														authentication system
 														using JWT, Passport.js
 														and bCrypt. Other than a
-														web developer, I am also
-														a cinematographer and an
+														web developer, I am a
+														cinematographer and an
 														illustrator. I am
 														proficient with Adobe
 														Premiere Pro and Adobe
