@@ -275,7 +275,7 @@ class About extends Component {
 														as a database and
 														Node.js as a run-time
 														enviroment. However, I
-														am also able to create
+														am also able of creating
 														applications with MySQL
 														or Firebase. I am also
 														capable of creating an
@@ -375,79 +375,7 @@ class About extends Component {
 											item
 											md={4}
 											sm={6}
-											xs={4}
-											direction="column"
-										>
-											<div className="listSkills">
-												<Typography align="center">
-													<FontAwesomeIcon
-														icon={faPhotoVideo}
-														size="4x"
-													/>
-												</Typography>
-												<Typography
-													variant="h6"
-													align="center"
-												>
-													Media
-												</Typography>
-												<Divider variant="middle" />
-												<Grid
-													container
-													direction="row"
-													justify="center"
-												>
-													<Grid
-														item
-														lg={7}
-														md={12}
-														sm={7}
-														xs={9}
-													>
-														<List
-															dense={true}
-															className="list"
-														>
-															{this.state.mediaList.map(
-																(item, i) => {
-																	return (
-																		<Zoom
-																			in={
-																				true
-																			}
-																			key={
-																				i
-																			}
-																		>
-																			<ListItem>
-																				<ListItemAvatar>
-																					{
-																						item.icon
-																					}
-																				</ListItemAvatar>
-																				<ListItemText class="listItem">
-																					<Typography align="center">
-																						{
-																							item.name
-																						}
-																					</Typography>
-																				</ListItemText>
-																			</ListItem>
-																		</Zoom>
-																	);
-																}
-															)}
-														</List>
-													</Grid>
-												</Grid>
-											</div>
-										</Grid>
-										<Grid
-											container
-											item
-											md={4}
-											sm={6}
-											xs={4}
+											xs={12}
 											direction="column"
 										>
 											<div className="listSkills">
@@ -516,6 +444,79 @@ class About extends Component {
 												</Box>
 											</div>
 										</Grid>
+										<Grid
+											container
+											item
+											md={4}
+											sm={6}
+											xs={12}
+											direction="column"
+										>
+											<div className="listSkills">
+												<Typography align="center">
+													<FontAwesomeIcon
+														icon={faPhotoVideo}
+														size="4x"
+													/>
+												</Typography>
+												<Typography
+													variant="h6"
+													align="center"
+												>
+													Media
+												</Typography>
+												<Divider variant="middle" />
+												<Grid
+													container
+													direction="row"
+													justify="center"
+												>
+													<Grid
+														item
+														lg={7}
+														md={12}
+														sm={7}
+														xs={9}
+													>
+														<List
+															dense={true}
+															className="list"
+														>
+															{this.state.mediaList.map(
+																(item, i) => {
+																	return (
+																		<Zoom
+																			in={
+																				true
+																			}
+																			key={
+																				i
+																			}
+																		>
+																			<ListItem>
+																				<ListItemAvatar>
+																					{
+																						item.icon
+																					}
+																				</ListItemAvatar>
+																				<ListItemText class="listItem">
+																					<Typography align="center">
+																						{
+																							item.name
+																						}
+																					</Typography>
+																				</ListItemText>
+																			</ListItem>
+																		</Zoom>
+																	);
+																}
+															)}
+														</List>
+													</Grid>
+												</Grid>
+											</div>
+										</Grid>
+										
 									</Grid>
 								</div>
 							</Grid>

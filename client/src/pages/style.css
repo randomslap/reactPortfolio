@@ -320,6 +320,9 @@ button#mySkills:hover {
 }
 
 @media all and (max-width: 540px) {
+	img#avatar {
+		display: none !important;
+	}
 	h1.ml11 {
 		font-size: 1.25rem;
 	}
@@ -330,7 +333,29 @@ button#mySkills:hover {
 		font-size: 1rem;
 	}
 	div.MuiPaper-root p.MuiTypography-body1 {
-		font-size: 1vh !important;
+		font-size: 1.5vh !important;
+	}
+	div.MuiGrid-grid-lg-7 ul.MuiList-root {
+		min-height: 100px !important;
+	}
+	li p.MuiTypography-body1 {
+		font-size: 1.5vh !important;
+		line-height: 0.5vh !important
+	}
+
+	div.listSkills p svg{
+		font-size: 3vh !important
+	}
+
+	li div svg{
+		font-size: 1.75vh !important;
+	}
+
+	li div svg.MuiSvgIcon-root{
+		font-size: 2vh !important;
+	}
+	.listSkills {
+		max-height: 52vh !important;
 	}
 }
 
