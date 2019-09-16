@@ -139,7 +139,6 @@ li div p.MuiTypography-body1 {
 	font-size: 4vh !important;
 }
 
-
 div.MuiPaper-root p.MuiTypography-body1 {
 	font-size: 2vh;
 }
@@ -287,6 +286,13 @@ button#mySkills:hover {
 	background-color: transparent;
 }
 
+.MuiBottomNavigationAction-label {
+	color: lightgray !important;
+}
+.MuiBottomNavigationAction-label.Mui-selected {
+	color: black !important;	
+}
+
 @media all and (max-width: 1279px) and (min-width: 600px) {
 	.MuiCardContent-root p {
 		font-size: 0.775rem !important;
@@ -337,22 +343,33 @@ button#mySkills:hover {
 	}
 	li p.MuiTypography-body1 {
 		font-size: 1.5vh !important;
-		line-height: 0.5vh !important
+		line-height: 1.5vh !important;
 	}
 
-	div.listSkills p svg{
-		font-size: 3vh !important
+	div.listSkills p svg {
+		font-size: 3vh !important;
 	}
 
-	li div svg{
+	li div svg {
 		font-size: 1.75vh !important;
 	}
 
-	li div svg.MuiSvgIcon-root{
+	li div svg.MuiSvgIcon-root {
 		font-size: 2vh !important;
 	}
 	.listSkills {
-		max-height: 52vh !important;
+		max-height: 63vh !important;
+		min-height: 60vh !important;
+		max-width: 10rem !important;
+	}
+	.MuiBottomNavigationAction-label.Mui-selected {
+		font-size: 0.655rem !important;
+	}
+	.MuiBottomNavigationAction-label {
+		font-size: 0.5rem !important;
+	}
+	.MuiTypography-h6 {
+		font-size: 2vh !important;
 	}
 }
 
@@ -360,5 +377,4 @@ button#mySkills:hover {
 	.MuiContainer-root#intro {
 		margin-top: 10vh;
 	}
-
 }

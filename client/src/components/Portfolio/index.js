@@ -40,7 +40,7 @@ class Portfolio extends Component {
 		const projectItemsRendered = this.state.projectsRendered;
 		const updateProjectsState = {
 			projects: this.state.projects.concat(
-				this.props.api.projects[this.state.projectsRendered]
+				this.props.api.projects[projectItemsRendered]
 			),
 			projectsRendered: projectItemsRendered + 1
 		};

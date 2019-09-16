@@ -148,13 +148,13 @@ class About extends Component {
 		const mediaItemsRendered = this.state.mediaItemsRendered;
 		const updateWebState = {
 			webDevList: this.state.webDevList.concat(
-				webdev[this.state.webItemsRendered]
+				webdev[webItemsRendered]
 			),
 			webItemsRendered: webItemsRendered + 1
 		};
 		const updateMediaState = {
 			mediaList: this.state.mediaList.concat(
-				media[this.state.mediaItemsRendered]
+				media[mediaItemsRendered]
 			),
 			mediaItemsRendered: mediaItemsRendered + 1
 		};
@@ -394,7 +394,7 @@ class About extends Component {
 											item
 											md={4}
 											sm={6}
-											xs={12}
+											xs={6}
 											direction="column"
 										>
 											<div className="listSkills">
@@ -422,7 +422,7 @@ class About extends Component {
 															item
 															lg={7}
 															md={7}
-															xs={7}
+															xs={12}
 														>
 															<List dense={true}>
 																{this.state.webDevList.map(
@@ -468,7 +468,7 @@ class About extends Component {
 											item
 											md={4}
 											sm={6}
-											xs={12}
+											xs={6}
 											direction="column"
 										>
 											<div className="listSkills">
@@ -495,7 +495,7 @@ class About extends Component {
 														lg={7}
 														md={12}
 														sm={7}
-														xs={9}
+														xs={12}
 													>
 														<List
 															dense={true}
