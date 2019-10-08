@@ -24,8 +24,6 @@ mongoose
 // Define any API routes before this runs
 app.get("*", function(req, res) {
 	res.sendFile(path.join(__dirname, "./client/public/index.html"));
-	if (!url.startsWith("/app/")) url = url.substring(1);
-	res.sendFile(url);
 });
 
 app.listen(PORT, function() {
