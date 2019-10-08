@@ -1,14 +1,14 @@
 import history from "../history";
 
 export const setFirstSlide = () => {
-	history.push("/");
+	history.push("/about");
 	return {
 		type: "FIRST"
 	};
 };
 
 export const setSecondSlide = () => {
-	history.push("/about");
+	history.push("/portfolio");
 	return {
 		type: "SECOND"
 	};

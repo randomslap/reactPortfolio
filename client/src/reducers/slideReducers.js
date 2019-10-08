@@ -1,5 +1,5 @@
 import { FIRST, SECOND, THIRD } from "../actions/types";
-import history from "../history"
+import history from "../history";
 
 const initialState = {
 	index: 0
@@ -7,11 +7,11 @@ const initialState = {
 
 export default function(state = initialState, action) {
 	switch (history.location.pathname) {
-		case "/":
+		case "/about":
 			return {
 				index: 1
 			};
-		case "/about":
+		case "/porfolio":
 			return {
 				index: 2
 			};
