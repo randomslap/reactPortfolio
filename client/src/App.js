@@ -5,12 +5,13 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import Home from "./pages/Homepage";
 import { Provider } from "react-redux";
 import store from "./store";
+import history from "./history";
 
 class App extends Component {
 	render() {
 		return (
 			<Provider store={store}>
-				<Router>
+				<Router history={history}>
 					<Switch>
 						<Route path="/" component={Home} />
 					</Switch>
@@ -19,7 +20,6 @@ class App extends Component {
 		);
 	}
 }
-
-library.add(fab)
+library.add(fab);
 
 export default App;
