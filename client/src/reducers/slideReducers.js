@@ -11,7 +11,7 @@ export default function(state = initialState, action) {
 			return {
 				index: 1
 			};
-		case "/porfolio":
+		case "/portfolio":
 			return {
 				index: 2
 			};
