@@ -34,8 +34,8 @@ class Navbar extends Component {
 				this.props.history.push("/contact");
 				return this.props.setThirdSlide();
 			default:
-				this.props.history.push("/about");
-				return this.props.setFirstSlide();
+				
+				return this.props.history.push("/");
 		}
 	};
 	render() {
