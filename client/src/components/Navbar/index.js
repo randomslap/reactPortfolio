@@ -18,19 +18,24 @@ import {
 	setSecondSlide,
 	setThirdSlide
 } from "../../actions/slidesActions";
+import { withRouter } from "react-router-dom";
 
 class Navbar extends Component {
 	onChange = (e, value) => {
 		e.preventDefault();
 		switch (value) {
-			case 1:
+			case "/about":
+				this.props.history.push("/about");
 				return this.props.setFirstSlide();
-			case 2:
+			case "/portfolio":
+				this.props.history.push("/portfolio");
 				return this.props.setSecondSlide();
-			case 3:
+			case "/contact":
+				this.props.history.push("/contact");
 				return this.props.setThirdSlide();
 			default:
-				return null;
+				this.props.history.push("/about");
+				return this.props.setFirstSlide();
 		}
 	};
 	render() {
@@ -41,7 +46,7 @@ class Navbar extends Component {
 						<Grid item sm={12} md={12} lg={12}>
 							<BottomNavigation
 								showLabels
-								value={this.props.slide.index}
+								value={this.props.location.pathname}
 								onChange={(e, value) => {
 									this.onChange(e, value);
 								}}
@@ -49,17 +54,17 @@ class Navbar extends Component {
 								<BottomNavigationAction
 									icon={<PersonIcon />}
 									label="About Me"
-									value={1}
+									value="/about"
 								/>
 								<BottomNavigationAction
 									icon={<LibraryBooksIcon />}
 									label="Portfolio"
-									value={2}
+									value="/portfolio"
 								/>
 								<BottomNavigationAction
 									icon={<ContactMailIcon />}
 									label="Contact Me"
-									value={3}
+									value="/contact"
 								/>
 							</BottomNavigation>
 						</Grid>
@@ -73,7 +78,9 @@ class Navbar extends Component {
 const mapStateToProps = state => ({
 	slide: state.index
 });
-export default connect(
-	mapStateToProps,
-	{ setFirstSlide, setSecondSlide, setThirdSlide }
-)(Navbar);
+export default withRouter(
+	connect(
+		mapStateToProps,
+		{ setFirstSlide, setSecondSlide, setThirdSlide }
+	)(Navbar)
+);

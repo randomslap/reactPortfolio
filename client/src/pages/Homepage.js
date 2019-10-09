@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import { Collapse, Slide, Fade, Zoom } from "@material-ui/core";
 import "./style.css";
 import Navbar from "../components/Navbar";
@@ -18,13 +19,13 @@ class Home extends Component {
 		slide2: false
 	};
 	componentDidMount() {
-		console.log(this.props.slide.index);
+		console.log(this.props);
 		this.setState({
 			index: this.props.slide.index
 		});
 		API.getAllProjects().then(res => {
 			console.log(res);
-			return this.props.callProjects(res.data)
+			return this.props.callProjects(res.data);
 		});
 	}
 	componentDidUpdate() {
@@ -44,13 +45,16 @@ class Home extends Component {
 	render() {
 		return (
 			<div>
-				<Slide in={this.state.navbar} direction="down">
+				<Slide
+					in={this.props.location.pathname !== "/"}
+					direction="down"
+				>
 					<div>
 						<Navbar />
 					</div>
 				</Slide>
 				<Fade
-					in={this.props.slide.index === 0}
+					in={this.props.location.pathname === "/"}
 					timeout={{ enter: 300, exit: 300 }}
 					mountOnEnter
 					unmountOnExit
@@ -60,7 +64,11 @@ class Home extends Component {
 					</div>
 				</Fade>
 				<Zoom
-					in={this.props.slide.index === 2}
+					in={
+						this.props.location.pathname === "/portfolio"
+							? true
+							: false
+					}
 					timeout={{ enter: 500, exit: 100 }}
 					style={{
 						transitionDelay: !this.state.navbar ? "500ms" : "0ms"
@@ -73,7 +81,9 @@ class Home extends Component {
 					</div>
 				</Zoom>
 				<Zoom
-					in={this.props.slide.index === 1}
+					in={
+						this.props.location.pathname === "/about" ? true : false
+					}
 					timeout={{ enter: 500, exit: 100 }}
 					style={{
 						transitionDelay: !this.state.navbar ? "500ms" : "0ms"
@@ -86,7 +96,11 @@ class Home extends Component {
 					</div>
 				</Zoom>
 				<Zoom
-					in={this.props.slide.index === 3}
+					in={
+						this.props.location.pathname === "/contact"
+							? true
+							: false
+					}
 					timeout={{ enter: 500, exit: 100 }}
 					style={{
 						transitionDelay: !this.state.navbar ? "500ms" : "0ms"
@@ -106,9 +120,11 @@ class Home extends Component {
 const mapStateToProps = state => ({
 	slide: state.index
 });
-export default connect(
-	mapStateToProps,
-	{
-		callProjects
-	}
-)(Home);
+export default withRouter(
+	connect(
+		mapStateToProps,
+		{
+			callProjects
+		}
+	)(Home)
+);

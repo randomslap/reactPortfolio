@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import { withRouter } from "react-router-dom";
 import {
 	Container,
 	Grid,
@@ -104,6 +105,7 @@ class Intro extends Component {
 
 	onClick = () => {
 		console.log(this.props.slide.index);
+		this.props.history.push("/about");
 		this.props.setFirstSlide();
 	};
 	render() {
@@ -192,7 +194,9 @@ class Intro extends Component {
 const mapStateToProps = state => ({
 	slide: state.index
 });
-export default connect(
-	mapStateToProps,
-	{ setFirstSlide }
-)(Intro);
+export default withRouter(
+	connect(
+		mapStateToProps,
+		{ setFirstSlide }
+	)(Intro)
+);
