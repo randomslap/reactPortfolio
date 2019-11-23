@@ -140,6 +140,7 @@ class Portfolio extends Component {
 												href={project.github}
 												target="_blank"
 												className="cardActions"
+												disabled={project.github === ""}
 											>
 												Github
 											</Button>
