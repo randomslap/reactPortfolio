@@ -23,6 +23,7 @@ import PhotoIcon from "@material-ui/icons/Photo";
 import GestureIcon from "@material-ui/icons/Gesture";
 import MovieIcon from "@material-ui/icons/Movie";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
+import ChangeHistoryIcon from "@material-ui/icons/ChangeHistory";
 import {
 	faPhotoVideo,
 	faCube,
@@ -114,6 +115,10 @@ class About extends Component {
 			{
 				name: "Node.js",
 				icon: <FontAwesomeIcon icon={["fab", "node"]} size="lg" />
+			},
+			{
+				name: "Next.js",
+				icon: <ChangeHistoryIcon />
 			},
 			{
 				name: "Express.js",
